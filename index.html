@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+</head>
+    
+    
+    
+<body>
+  <div id='map'></div>
+    
+    
+    
+    
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoibWVsYW5pZW1vc2hpIiwiYSI6ImNqY3Vza2NhODBpa2kzMG9meGZhMTAybHgifQ.ZED8X_5-16ywoXueB4D5eQ';
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/melaniemoshi/cjcusi5vz2b5l2rr3r2c365xg',
+      center: [-114.0708, 51.0486],
+      zoom: 10.7
+    });
+
+           map.on('load', function() {
+
+               // ---------add source------------------------------
+          map.addSource('traffic', {
+            type: 'geojson',
+            data: './traffic.geojson'
+          });
+               
+          // --------------add heatmap layer here--------------------
+               map.addLayer({
+                  id: 'traffic-heat',
+                  type: 'heatmap',
+                  source: 'traffic',
+                  maxzoom: 15,
+                  paint: {
+                      
+                    // increase weight as diameter breast height increases
+                    'heatmap-weight': {
+                      property: 'count',
+                      stops: [
+                        [1, 1],     // when count = 1, heatmap-weight is 1
+                      ]
+                    },
+                      
+                    // increase intensity as zoom level increases
+                    'heatmap-intensity': {
+                      stops: [
+                        [11, 1],
+                        [15, 3]
+                      ]
+                    },
+                      
+                    // assign color values be applied to points depending on their density
+                    'heatmap-color': [
+                      'interpolate',
+                      ['linear'],
+                      ['heatmap-density'],
+                      0, 'rgba(100,239,139,1)
+                      0.2, 'rgb(26,150,65)',
+                      0.4, 'rgb(166,217,106)',
+                      0.8, 'rgb(253,174,97)',
+                      0.95, 'rgb(252,141,89)',
+                      1, 'rgb(215,25,28)'
+                    ],
+                      
+                    // increase radius as zoom increases
+                    'heatmap-radius': {
+                      stops: [
+                        [11, 17],  //At zoom level __, radius is at __
+                        [15, 40]   //At zoom level __, radius is at __
+                      ]
+                    },
+                      
+                    // decrease opacity to transition into the circle layer
+                    'heatmap-opacity': {
+                      default: 0.8,  //Default opacity is 1
+                      stops: [
+                        [10, 0.6],  //At zoom level __, opacity is at __
+                        [14, 0.3]   
+                      ]
+                    },
+                  }
+                }, 'waterway-label');
+               
+               
+               
+          // ---------------add circle layer here-----------------
+               map.addLayer({
+                  id: 'traffic-point',
+                  type: 'circle',
+                  source: 'traffic',
+                  minzoom: 14,
+                  paint: {
+                    // increase the radius of the circle as the zoom level and dbh value increases
+                    'circle-radius': {
+                      property: 'count',
+                      type: 'exponential',
+                      stops: [
+                        [15, 8],
+                      ]
+                    },
+                    'circle-color': 'rgb(215,48,39)',
+                    'circle-opacity': {
+                      stops: [
+                        [13, 0],
+                        [14, 1]
+                      ]
+                    }
+                  }
+                }, 'waterway-label');
+                        });
+
+  </script>
+    
+</body> 
+    
+</html>

@@ -1,0 +1,125 @@
+CLASS,"Industrial, Major Park Area, Residential, Residual Sub Area"
+CLASS_CODE,"1 = Residential, 2 = Industrial, 3 = Major Park, 4 = Residual Sub Area"
+COMM_CODE,A three character code assigned to the Community District
+NAME,Full Name of the Community District as approved by City Council
+SECTOR,"Planning Sector Polygon the Community is Located in: Centre, East, West, North, Northeast, Northwest, South, Southeast, Southwest"
+SRG,"Reflects the yearly development capacity or housing supply as outlined in the Suburban Residential Growth document, the valid values are: BUILT-OUT, DEVELOPING, NON RESIDENTIAL, and N/A"
+COMM_STRUC,"Used to identify life-cycle patterns and to develop the demographic model of Calgary. Where a decade is listed at least 51% of a community's peak population must be in place by the end of the decade it is assigned to. Valid values are: 19502, 1960s/1970s, 1970s/1980s, 1980s/1990s, 1990s/2000s, 2000s, Building Out, Centre City, Employment, Inner City, Other, Undeveloped"
+CNSS_YR,Year census data was gathered
+FOIP_IND,Indicates results subject to Freedom of Information and Protection of Privacy Legislation. Freedom of Information and Protection of Privacy rules are applied to the data to ensure that no individual can be identified in any of the data released.
+RES_CNT,Number of residents in the ward or community
+DWELL_CNT,Number of dwellings in the ward or community
+PRSCH_CHLD,Number of preschool children in the ward or community
+ELECT_CNT,Number of enumerated voters in the ward or community.
+EMPLYD_CNT,"Employed persons include those 15 years of age and older who are employed full or part time. This includes those who are self employed, employed by others and persons who may not be working temporarily due to health, vacation, weather, labour disputes or other personal reasons such as bereavement."
+OWNSHP_CNT,Number of homeowners
+DOG_CNT,Number of dogs
+CAT_CNT,Number of cats
+SING_FAMLY,Number of single family dwellings
+DUPLEX,Number of duplexes
+MULTI_PLEX,Number of structures designed and built to contain at least three or more dwelling units on one or two levels.
+APARTMENT,Number of structures designed and built to contain at least three or more dwelling units on three or more levels.
+TOWN_HOUSE,A structure originally designed and built to contain three or more attached or semi-detached dwelling units.
+MANUF_HOME,"A structure originally built to be movable, whethere it is now movable or on a permanent foundataion. Also referred to as a manufactured home."
+CONV_STRUC,The additional dwelling unit in a structure that contains more units than the building was originally designed and built to contain. Also referred to as a converted structure.
+COMUNL_HSE,"A structure that contains one dwelling unit, in which multiple individuals, are accommodated, who have separate sleeping facilities but share common cooking and/or bathroom facilities. Also referred to as a communal house."
+RES_COMM,A structure that is primarily commercial but which also contains one or two dwelling units.
+OTHER_RES,Any residential structure that contains a dwelling unit but does not fit the other structure types listed.
+NURSING_HM,"A structure originally designed to contain one or more dwelling units with is designated as a nursing home, auxiliary hospital, care centre, etc."
+OTHER_INST,"A structure where multiple residents are temporarily living and where the cooking is centrally provided for and which is not prepared by the residents, i.e hospice, jail, etc."
+HOTEL_CNT,A structure that provides lodging.
+OTHER_MISC,A structure that does not fit any of the other categories.
+APT_NO_RES,Number of  apartment units that are used for non-residential purposes in the ward or community
+APT_OCCPD,Number of  apartment units that are occupied in the ward or community
+APT_OWNED,Number of  apartment units that are owned by the resident in the ward or community
+APT_PERSON,Total number of persons occupying  apartment units in the ward or community
+APT_VACANT,Number of  apartment units that are vacant in the ward or community
+APT_UC,Number of  apartment units that are under construction in the ward or community
+APT_NA,Number of  apartment units that are inactive in the ward or community
+CNV_NO_RES,Number of  converted structure units that are used for non-residential purposes in the ward or community
+CNV_OCCPD,Number of  converted structure units that are occupied in the ward or community
+CNV_OWNED,Number of  converted structure units that are owned by the resident in the ward or community
+CNV_PERSON,Total number of persons occupying  converted structure units in the ward or community
+CNV_VACANT,Number of  converted structure units that are vacant in the ward or community
+CNV_UC,Number of  converted structure units that are under construction in the ward or community
+CNV_NA,Number of  converted structure units that are inactive in the ward or community
+DUP_NO_RES,Number of  duplex units that are used for non-residential purposes in the ward or community
+DUP_OCCPD,Number of  duplex units that are occupied in the ward or community
+DUP_OWNED,Number of  duplex units that are owned by the resident in the ward or community
+DUP_PERSON,Total number of persons occupying  duplex units in the ward or community
+DUP_VACANT,Number of  duplex units that are vacant in the ward or community
+DUP_UC,Number of  duplex units that are under construction in the ward or community
+DUP_NA,Number of  duplex units that are inactive in the ward or community
+MFH_NO_RES,Number of  manufactured home units that are used for non-residential purposes in the ward or community
+MFH_OCCPD,Number of  manufactured home units that are occupied in the ward or community
+MFH_OWNED,Number of  manufactured home units that are owned by the resident in the ward or community
+MFH_PERSON,Total number of persons occupying  manufactured home units in the ward or community
+MFH_VACANT,Number of  manufactured home units that are vacant in the ward or community
+MFH_UC,Number of  manufactured home units that are under construction in the ward or community
+MFH_NA,Number of  manufactured home units that are inactive in the ward or community
+MUL_NO_RES,Number of  multiplex units that are used for non-residential purposes in the ward or community
+MUL_OCCPD,Number of  multiplex units that are occupied in the ward or community
+MUL_OWNED,Number of  multiplex units that are owned by the resident in the ward or community
+MUL_PERSON,Total number of persons occupying  multiplex units in the ward or community
+MUL_VACANT,Number of  multiplex units that are vacant in the ward or community
+MUL_UC,Number of  multiplex units that are under construction in the ward or community
+MUL_NA,Number of  multiplex units that are inactive in the ward or community
+OTH_NO_RES,Number of  other structure units that are used for non-residential purposes in the ward or community
+OTH_OCCPD,Number of  other structure units that are occupied in the ward or community
+OTH_OWNED,Number of  other structure units that are owned by the resident in the ward or community
+OTH_PERSON,Total number of persons occupying  other structure units in the ward or community
+OTH_VACANT,Number of  other structure units that are vacant in the ward or community
+OTH_UC,Number of  other structure units that are under construction in the ward or community
+OTH_NA,Number of  other structure units that are inactive in the ward or community
+TWN_NO_RES,Number of  townhouse units that are used for non-residential purposes in the ward or community
+TWN_OCCPD,Number of  townhouse units that are occupied in the ward or community
+TWN_OWNED,Number of  townhouse units that are owned by the resident in the ward or community
+TWN_PERSON,Total number of persons occupying  townhouse units in the ward or community
+TWN_VACANT,Number of  townhouse units that are vacant in the ward or community
+TWN_UC,Number of  townhouse units that are under construction in the ward or community
+TWN_NA,Number of  townhouse units that are inactive in the ward or community
+SF_NO_RES,Number of  single family units that are used for non-residential purposes in the ward or community
+SF_OCCPD,Number of  single family units that are occupied in the ward or community
+SF_OWNED,Number of  single family units that are owned by the resident in the ward or community
+SF_PERSON,Total number of persons occupying  single family units in the ward or community
+SF_VACANT,Number of  single family units that are vacant in the ward or community
+SF_UC,Number of  single family units that are under construction in the ward or community
+SF_NA,Number of  single family units that are inactive in the ward or community
+OTH_STRTY,Other Structure Type
+DWELSZ_1,Dwelling has 1 occupant
+DWELSZ_2,Dwelling has 2 occupants
+DWELSZ_3,Dwelling has 3 occupants
+DWELSZ_4_5,Dwelling has 4 or 5 occupants
+DWELSZ_6,Dwelling has 6 occupants
+MALE_CNT,Total number of male residents in the ward or community
+FEMALE_CNT,Total number of female residents in the ward or community
+MALE_0_4,Total number of male residents aged 0 to 4 in the ward or community
+MALE_5_14,Total number of male residents aged 5 to 14 in the ward or community
+MALE_15_19,Total number of male residents aged 15 to 19 in the ward or community
+MALE_20_24,Total number of male residents aged 20 to 24 in the ward or community
+MALE_25_34,Total number of male residents aged 25 to 34 in the ward or community
+MALE_35_44,Total number of male residents aged 35 to 44 in the ward or community
+MALE_45_54,Total number of male residents aged 45 to 54 in the ward or community
+MALE_55_64,Total number of male residents aged 55 to 64 in the ward or community
+MALE_65_74,Total number of male residents aged 65 to 74 in the ward or community
+MALE_75,Total number of male residents aged 75+ in the ward or community
+FEM_0_4,Total number of female residents aged 0 to 4 in the ward or community
+FEM_5_14,Total number of female residents aged 5 to 14 in the ward or community
+FEM_15_19,Total number of female residents aged 15 to 19 in the ward or community
+FEM_20_24,Total number of female residents aged 20 to 24 in the ward or community
+FEM_25_34,Total number of female residents aged 25 to 34 in the ward or community
+FEM_35_44,Total number of female residents aged 35 to 44 in the ward or community
+FEM_45_54,Total number of female residents aged 45 to 54 in the ward or community
+FEM_55_64,Total number of female residents aged 55 to 64 in the ward or community
+FEM_65_74,Total number of female residents aged 65 to 74 in the ward or community
+FEM_75,Total number of female residents aged 75+ in the ward or community
+MF_0_4,Total number of male and female residents aged 0 to 4 in the ward or community
+MF_5_14,Total number of male and female residents aged 5 to 14 in the ward or community
+MF_15_19,Total number of male and female residents aged 15 to 19 in the ward or community
+MF_20_24,Total number of male and female residents aged 20 to 24 in the ward or community
+MF_25_34,Total number of male and female residents aged 25 to 34 in the ward or community
+MF_35_44,Total number of male and female residents aged 35 to 44 in the ward or community
+MF_45_54,Total number of male and female residents aged 45 to 54 in the ward or community
+MF_55_64,Total number of male and female residents aged 55 to 64 in the ward or community
+MF_65_74,Total number of male and female residents aged 65 to 74 in the ward or community
+MF_75,Total number of male and female residents aged 75+ in the ward or community
