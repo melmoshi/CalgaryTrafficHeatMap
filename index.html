@@ -24,13 +24,13 @@
     
     
 <body>
-  <div id='map'></div>
+  <div id='map'></div> 
     
     
     
     
   <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoibWVsYW5pZW1vc2hpIiwiYSI6ImNqY3Vza2NhODBpa2kzMG9meGZhMTAybHgifQ.ZED8X_5-16ywoXueB4D5eQ';
+    mapboxgl.accessToken = 'pk.eyJ1IjoibWVsYW5pZW1vc2hpIiwiYSI6ImNqY3kwMTRncTA5OHAzM3A3YmZwd3J5ZG8ifQ._EtJnUNns23JnKcKiI0xGw';
     var map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/melaniemoshi/cjcusi5vz2b5l2rr3r2c365xg',
@@ -40,13 +40,15 @@
 
            map.on('load', function() {
 
-               // ---------add source------------------------------
+               // ---------add source---------------------------------------------------------
           map.addSource('traffic', {
             type: 'geojson',
             data: './traffic.geojson'
           });
                
-          // --------------add heatmap layer here--------------------
+               
+               
+          // --------------add heatmap layer here----------------------------------------------
                map.addLayer({
                   id: 'traffic-heat',
                   type: 'heatmap',
@@ -75,7 +77,7 @@
                       'interpolate',
                       ['linear'],
                       ['heatmap-density'],
-                      0, 'rgba(100,239,139,1)
+                      0, 'rgba(100,239,139,0)',
                       0.2, 'rgb(26,150,65)',
                       0.4, 'rgb(166,217,106)',
                       0.8, 'rgb(253,174,97)',
@@ -104,7 +106,7 @@
                
                
                
-          // ---------------add circle layer here-----------------
+          // ---------------add circle layer here----------------------------------------
                map.addLayer({
                   id: 'traffic-point',
                   type: 'circle',
@@ -129,6 +131,16 @@
                   }
                 }, 'waterway-label');
                         });
+      
+      // ---------------add circle interactivity----------------------------------------
+      
+      map.on('click', 'traffic-point', function(e) {
+              new mapboxgl.Popup()
+                .setLngLat(e.features[0].geometry.coordinates)
+                .setHTML('<b>Description:</b> ' + e.features[0].properties.DESCRIPTION)
+                .addTo(map);
+            });
+      //------------------------------------------------------------------------------
 
   </script>
     
