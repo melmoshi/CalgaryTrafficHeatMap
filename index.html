@@ -6,6 +6,7 @@
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="main.css">
     <style>
       body {
         margin: 0;
@@ -24,9 +25,29 @@
     
     
 <body>
+    
   <div id='map'></div> 
     
-    
+       <div class='map-overlay' id='features'>
+            <h2 id="yearTitle">Traffic Incidents 2017</h2>
+            <div id='pd'>
+                <p>Zoom-in to see individual points, and click to see number of incidents. <br /> <br /> This is a work in progress.</p>
+            </div>
+        </div>
+        
+<!--
+        <div class='map-overlay' id='legend'> 
+        <P id='rate'><strong>Traffic Incidents 2017</strong></P>
+        </div>
+-->
+        
+        <div class='map-overlay' id='info'>
+            <P>Moshi - 2018</P>
+            <P>data.calgary.ca</P>
+            <P>Traffic Heat Map</P>  
+            <a id="mapsLink" href="https://melmoshi.github.io" target="_blank"><strong>View More Maps</strong></a>
+        </div>
+        
     
     
   <script>
@@ -43,7 +64,7 @@
                // ---------add source---------------------------------------------------------
           map.addSource('traffic', {
             type: 'geojson',
-            data: './traffic.geojson'
+            data: './trafficWithCount.geojson'
           });
                
                
@@ -137,7 +158,7 @@
       map.on('click', 'traffic-point', function(e) {
               new mapboxgl.Popup()
                 .setLngLat(e.features[0].geometry.coordinates)
-                .setHTML('<b>Description:</b> ' + e.features[0].properties.DESCRIPTION)
+                .setHTML('<b>Count:</b> ' + e.features[0].properties.COUNT_1)
                 .addTo(map);
             });
       //------------------------------------------------------------------------------
