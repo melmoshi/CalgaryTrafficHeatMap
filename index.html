@@ -7,6 +7,9 @@
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="main.css">
+    <!--  FONTS  -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    
     <style>
       body {
         margin: 0;
@@ -31,12 +34,12 @@
        <div class='map-overlay' id='features'>
             <h2 id="yearTitle">Traffic Incidents 2017</h2>
             <div id='pd'>
-                <p>Zoom-in to see individual points, and click to see number of incidents at each point. <br /> <br /> This is a work in progress.</p>
+                <p>Zoom-in to see individual points. <br /><br /> Click to see number of incidents at each point. </p>
             </div>
         </div>
         
         <div class='map-overlay' id='legend'> 
-        <P id='rate'><strong>Number of Incidents For Each Location</strong></P>
+        <P id='rate'><strong>Number of Incidents At Each Location</strong></P>
         </div>
         
         <div class='map-overlay' id='info'>
@@ -47,7 +50,7 @@
         </div>
     
         <div class='map-overlay' id='quad'>
-            <p><strong>Number of Incidents <br /> Per Quadrant</strong></p> 
+            <p><strong>Total Number of Traffic  <br />Incidents Per Quadrant</strong></p> 
             <p><strong>NW: </strong>9,932 <strong>&nbsp;&nbsp;&nbsp;  NE: </strong>20,680</p>
             <p><strong>SW: </strong>12,283 <strong>&nbsp;&nbsp;&nbsp;  SE: </strong>30,116</p>
         </div>
@@ -133,8 +136,8 @@
                     // increase radius as zoom increases
                     'heatmap-radius': {
                       stops: [
-                        [11, 18],  //At zoom level __, radius is at __
-                        [13, 20],
+                        [11, 20],  //At zoom level __, radius is at __
+                        [13, 25],
                         [15, 50]   //At zoom level __, radius is at __
                       ]
                     },
@@ -143,13 +146,15 @@
                     'heatmap-opacity': {
                       default: 0.8,  //Default opacity is 1
                       stops: [
-                        [10, 0.6],  //At zoom level __, opacity is at __
+                        [10, 0.7],  //At zoom level __, opacity is at __
+                        [12, 0.8],
                         [14, 0.3],
+                        [16, 0.2],
                         [17, 0]
                       ]
                     },
                   }
-                }, 'waterway-label');
+                });
                
                
                
@@ -171,6 +176,8 @@
                         [{ zoom: 17, value: 30 }, 30]
                       ]
                     },
+                    'circle-stroke-color': 'rgba(255,255,255,0.3)',
+                    'circle-stroke-width': 0.7,
                     'circle-color': {
                           property: 'COUNT_1',
                           type: 'exponential',
@@ -191,7 +198,7 @@
                       ]
                     }
                   }
-                }, 'waterway-label');
+                });
                         });
       
       // ---------------add circle interactivity----------------------------------------
